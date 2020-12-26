@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10)
+project(naive_ray_tracer)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O2 -pthread -fopenmp")
+include_directories(include)
+link_directories(lib)
+add_subdirectory(lib)
+add_executable(naive_ray_tracer main.cpp)
+target_link_libraries(naive_ray_tracer MY_LIBS)

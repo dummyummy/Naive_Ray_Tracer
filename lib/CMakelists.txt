@@ -1,0 +1,1 @@
+add_library(MY_LIBS Sphere.cpp Plane.cpp Material.cpp Surface.cpp Scene.cpp)
