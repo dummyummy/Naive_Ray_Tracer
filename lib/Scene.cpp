@@ -35,10 +35,10 @@ bool Scene::hit(const Ray &ray, const double &T0, const double &T1, HitRecord &h
     {
         hitRecord.t = t1;
         hitRecord.kd = hitObject->meta->kd;
-        hitRecord.ks = hitObject->meta->ks;
-        hitRecord.ka = hitObject->meta->ka;
-        hitRecord.p = hitObject->meta->p;
         hitRecord.km = hitObject->meta->km;
+        hitRecord.ks = hitObject->meta->ks;
+        hitRecord.p = hitObject->meta->p;
+        hitRecord.ka = hitObject->meta->ka;
         hitRecord.n = hitObject->getNormal(hitPos).normalized();
         return true;
     }

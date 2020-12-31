@@ -5,11 +5,11 @@
 
 struct Material
 {
-    Color3d kd;
-    double ks, ka, p, km;
+    Color3d kd, km;
+    double ks, ka, p;
     Material() = default;
     ~Material() = default;
-    Material(const Color3d &kd, const double &ks, const double &ka, const double &p, const double &km) : kd(kd), ks(ks), ka(ka), p(p), km(km) {}
+    Material(const Color3d &kd, const Color3d &km, const double &ks, const double &p, const double &ka) : kd(kd), km(km), ks(ks), ka(ka), p(p) {}
 };
 
 #endif

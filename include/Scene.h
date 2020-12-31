@@ -12,12 +12,12 @@ struct Scene
     struct HitRecord
     {
         double t;
-        Color3d kd;
-        double ks, ka, p, km;
+        Color3d kd, km;
+        double ks, p, ka;
         Vector3d n;
         HitRecord() = default;
         ~HitRecord() = default;
-        HitRecord(const double &t, const Color3d &kd, const double &ks, const double &ka, const double &p, const double &km, const Vector3d &n) : t(t), kd(kd), ks(ks), ka(ka), p(p), km(km), n(n) {}
+        HitRecord(const double &t, const Color3d &kd, const Color3d &km, const double &ks, const double &p, const double &ka, const Vector3d &n) : t(t), kd(kd), km(km), ks(ks), p(p), ka(ka), n(n) {}
     };
     std::vector<Surface *> objects;
     std::vector<Light *> lights;

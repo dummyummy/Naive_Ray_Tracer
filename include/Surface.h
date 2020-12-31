@@ -13,7 +13,7 @@ class Surface
 {
 public:
     Material *meta;
-    Surface &setMaterial(const Color3d &kd, const double &ks, const double &ka, const double &p, const double &km);
+    Surface &setMaterial(const Color3d &kd, const Color3d &km, const double &ks, const double &p, const double &ka);
     /**
      * return the surface normal of a point on the surface
      */
