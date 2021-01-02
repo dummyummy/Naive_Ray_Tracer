@@ -11,7 +11,7 @@
 #include "svpng.h"
 #include "Scene.h"
 
-using namespace std;
+// using namespace std;
 
 const int width = 600, height = 600, channels = 3;
 Vector3d window[height][width];
@@ -23,7 +23,7 @@ int main()
     int R = (int)eyePos.x + width / 2, U = (int)eyePos.y + height / 2;
     int L = (int)eyePos.x - width / 2, B = (int)eyePos.y - height / 2;
     Scene scene(Color3d(0, 0, 0), Color3d(30, 30, 30));
-    scene.addObject(&(new Plane(Point3d(0, 0, 0), Vector3d(0, 1, 0)))->setMaterial(Color3d(0, 0, 0), Color3d(1, 1, 1), 0, 0, 0));
+    scene.addObject(&(new Plane(Point3d(0, 0, 0), Vector3d(0, 1, 0)))->setMaterial(Color3d(1, 1, 1), Color3d(1, 1, 1), 0, 0, 0));
     // scene.addObject(&(new Sphere(Point3d(-100, 50, -500), 50))->setMaterial(Color3d(0, 0.3, 0), Color3d(0, 0.3, 0), 0.1, 75, 0));
     scene.addObject(&(new Sphere(Point3d(100, 150, -2000), 100))->setMaterial(Color3d(0.3, 0, 0), Color3d(0.3, 0, 0), 0.1, 75, 0));
     // scene.addObject(&(new Sphere(Point3d(80, 80, -100), 70))->setMaterial(Color3d(0.3, 0.3, 0), 0.2, 0.1, 75, 0));
@@ -51,11 +51,11 @@ int main()
     {
         for (int j = 0; j < width; ++j)
         {
-            *p1 = (byte)min(255.0, window[i][j].r);
+            *p1 = (byte)std::min(255.0, window[i][j].r);
             p1++;
-            *p1 = (byte)min(255.0, window[i][j].g);
+            *p1 = (byte)std::min(255.0, window[i][j].g);
             p1++;
-            *p1 = (byte)min(255.0, window[i][j].b);
+            *p1 = (byte)std::min(255.0, window[i][j].b);
             p1++;
         }
     }

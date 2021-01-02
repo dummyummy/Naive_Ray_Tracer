@@ -28,7 +28,7 @@ struct Scene
     void addObject(Surface *object);
     void addLight(Light *light);
     bool hit(const Ray &ray, const double &T0, const double &T1, HitRecord &hitRecord) const;
-    Color3d rayColor(const Ray &ray, const double &t0, const double &t1) const;
+    Color3d rayColor(const Ray &ray, const double &t0, const double &t1, int count = 1000) const;
 };
 
 #endif

@@ -46,10 +46,10 @@ bool Scene::hit(const Ray &ray, const double &T0, const double &T1, HitRecord &h
         return false;
 }
 
-Color3d Scene::rayColor(const Ray &ray, const double &t0, const double &t1) const
+Color3d Scene::rayColor(const Ray &ray, const double &t0, const double &t1, int count) const
 {
     HitRecord rec, srec;
-    if (hit(ray, t0, t1, rec))
+    if (count && hit(ray, t0, t1, rec))
     {
         Point3d pos = ray.o + rec.t * ray.d;
         Color3d c = rec.ka * Ia;
@@ -63,8 +63,8 @@ Color3d Scene::rayColor(const Ray &ray, const double &t0, const double &t1) cons
             }
         }
         Vector3d r = ray.d - 2 * ray.d.dot(rec.n) * rec.n;
-        return c + rec.km * rayColor(Ray(pos, r), 1e-9, 1e18);
+        return c + rec.km * rayColor(Ray(pos, r), 1e-9, 1e18, count - 1);
     }
     else
-        return background;    
+        return background;
 }
